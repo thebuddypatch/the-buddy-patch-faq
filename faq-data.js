@@ -108,10 +108,10 @@ window.FAQ_ITEMS = [
     q_en: "How fast does it kick in?",
     a_th: `<p><strong>ออกฤทธิ์หลังแปะ 30 นาที - 1 ชั่วโมง</strong></p>
       <p>วิตามินและสารสกัดในแผ่นแปะต้องใช้เวลาในการออกฤทธิ์ 30 นาที - 1 ชั่วโมงตามงานวิจัย หลังจากนั้นจะค่อย ๆ ทำงานต่อเนื่องไปจนครบ 8 ชั่วโมง</p>
-      <div class="tip">💡 <strong>Tip:</strong> แปะ <em>Relax Patch</em> ก่อนเริ่มงานสำคัญ 30-60 นาที เพื่อให้ออกฤทธิ์ทันเวลา</div>`,
+      <div class="tip">💡 <strong>Tip:</strong> แปะ <em>Relax Patch</em> ก่อนเดินทาง 30-60 นาที เพื่อให้พักผ่อนระหว่างเดินทางได้ดีขึ้น</div>`,
     a_en: `<p><strong>Active in 30 minutes – 1 hour after applying.</strong></p>
       <p>Research shows the vitamins and extracts in the patch take 30-60 minutes to reach effect, then keep working steadily for the full 8 hours.</p>
-      <div class="tip">💡 <strong>Tip:</strong> Apply <em>Relax Patch</em> 30-60 minutes before a deep-work session for perfect timing.</div>`
+      <div class="tip">💡 <strong>Tip:</strong> Apply <em>Relax Patch</em> 30-60 minutes before travel for better rest along the way.</div>`
   },
   {
     id: "when-apply", category: "start", sku: "all",
