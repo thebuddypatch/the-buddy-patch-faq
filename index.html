@@ -777,15 +777,41 @@ body[data-density="airy"] .faq-list{gap:64px}
 @media (max-width:640px){.footer-meta{text-align:left}}
 
 /* ─── responsive type ─────────────────────────────────────────── */
+/* Tablet (≤768px) — pack nav tighter so brand + lang + CTA all fit */
+@media (max-width:768px){
+  .nav-inner{padding:10px 18px;gap:10px}
+  .nav-brand{font-size:14px;gap:8px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .lang-toggle{padding:6px 10px;font-size:11px}
+  .nav-cta{padding:9px 14px;font-size:12px}
+}
 @media (max-width:640px){
-  .hero{padding:120px 22px 60px}
+  .hero{padding:110px 22px 56px}
+  .hero-sub{font-size:16px}
   .body{padding:20px 22px var(--density-y)}
   .cta-section{padding:40px 22px 60px}
-  .cta-card{padding:48px 24px}
+  .cta-card{padding:44px 22px}
+  .cta-row{flex-direction:column;gap:8px}
+  .cta-row > *{width:100%;justify-content:center}
   .footer{padding:24px 22px 32px}
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:14px}
   .group-head h2{font-size:20px}
-  .faq-q-text{font-size:15px}
-  .faq-a-body{font-size:14.5px}
+  .faq-q{padding:16px 18px}
+  .faq-q-text{font-size:15px;gap:10px}
+  .faq-a-body{font-size:14.5px;padding:0 18px 18px 18px}
+  .faq-mark{width:24px;height:24px}
+  .dt{font-size:13px}
+  .dt th,.dt td{padding:8px 10px}
+}
+/* Narrow phones (≤420px) — hide non-essential nav text, full-bleed CTA */
+@media (max-width:420px){
+  .nav-brand span{display:none}
+  .nav-cta svg{display:none}
+  .lang-toggle .lang-sep{margin:0 2px}
+  .hero{padding:96px 18px 48px}
+  .hero-chip{font-size:10px;padding:7px 12px}
+  .body{padding:16px 18px var(--density-y)}
+  .cta-section{padding:32px 18px 48px}
+  .footer{padding:20px 18px 28px}
 }
 
 /* glass off => no backdrop blur, opaque fallback */
