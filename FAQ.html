@@ -849,6 +849,41 @@ body[data-density="airy"] .faq-list{gap:64px}
   :lang(th) .faq-a-body{font-size:13px}
 }
 
+/* ── HARD OVERRIDE: bulletproof mobile sizes (wins over any other rule) ── */
+@media (max-width:640px){
+  html,body{max-width:100vw!important;overflow-x:hidden!important}
+  .body,.body-main,.faq-list,.faq-group,.faq-rows,.faq-row,
+  .faq-q,.faq-q-text,.faq-a-wrap,.faq-a,.faq-a-body{
+    max-width:100%!important;
+    min-width:0!important;
+  }
+  .faq-q-text,.faq-q-text *{
+    font-size:14.5px!important;
+    line-height:1.5!important;
+    overflow-wrap:anywhere!important;
+    word-break:break-word!important;
+  }
+  .faq-a-body,
+  .faq-a-body p,
+  .faq-a-body li,
+  .faq-a-body div,
+  .faq-a-body span,
+  .faq-a-body strong,
+  .faq-a-body em{
+    font-size:13.5px!important;
+    line-height:1.65!important;
+    overflow-wrap:anywhere!important;
+    word-break:break-word!important;
+    line-break:auto!important;
+    max-width:100%!important;
+  }
+  .faq-a-body{padding:6px 14px 14px 14px!important}
+  .faq-a-body .dt,
+  .faq-a-body .dt th,
+  .faq-a-body .dt td{font-size:12.5px!important}
+  .group-head h2{font-size:18px!important}
+}
+
 /* glass off => no backdrop blur, opaque fallback */
 body[data-glass="off"] .nav.is-scrolled,
 body[data-glass="off"] .hero-chip,
@@ -881,8 +916,8 @@ body[data-glass="heavy"] .cta-card{
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
 <!-- Data + Tweaks + App (cache-bust via ?v=N — bump on each deploy) -->
-<script src="faq-data.js?v=20260517c"></script>
-<script type="text/babel" src="tweaks-panel.jsx?v=20260517c"></script>
-<script type="text/babel" src="faq-app.jsx?v=20260517c"></script>
+<script src="faq-data.js?v=20260517d"></script>
+<script type="text/babel" src="tweaks-panel.jsx?v=20260517d"></script>
+<script type="text/babel" src="faq-app.jsx?v=20260517d"></script>
 </body>
 </html>
