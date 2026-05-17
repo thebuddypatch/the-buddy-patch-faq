@@ -2,7 +2,10 @@
 <html lang="th">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"/>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
 <title>FAQ · the buddy patch</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -88,8 +91,12 @@ body[data-palette="neutral"]{
 }
 
 *,*::before,*::after{box-sizing:border-box}
-html,body{margin:0;padding:0;overflow-x:hidden;max-width:100%}
-html{scroll-behavior:smooth}
+html,body{margin:0;padding:0;overflow-x:hidden;max-width:100%;width:100%}
+html{
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
 body{
   font-family:var(--font);
   color:var(--buddy-char);
@@ -344,10 +351,11 @@ body[data-hero-patches="off"] .hero-patches{display:none}
   margin:0 auto;
   padding:var(--density-y) 28px;
   display:grid;
-  grid-template-columns:260px 1fr;
+  grid-template-columns:260px minmax(0,1fr);
   gap:48px;
   align-items:start;
 }
+.body-main{min-width:0;max-width:100%}
 @media (max-width:1023px){
   .body{grid-template-columns:1fr;gap:24px;padding-top:24px}
 }
@@ -469,6 +477,7 @@ body[data-density="airy"] .faq-list{gap:64px}
 /* FAQ ROW — glass pill style (option 3) */
 .faq-row{
   position:relative;
+  max-width:100%;
   background:rgba(255,255,255,.55);
   border-radius:24px;
   border:.5px solid rgba(255,255,255,.65);
@@ -543,7 +552,13 @@ body[data-density="airy"] .faq-list{gap:64px}
   padding:0 26px 22px 64px;
   color:var(--buddy-char);
   font-size:15px;line-height:1.6;
+  max-width:100%;
+  overflow-wrap:break-word;
+  word-break:break-word;
+  hyphens:auto;
 }
+.faq-a-body *{max-width:100%}
+.faq-a-body img,.faq-a-body svg{height:auto}
 :lang(th) .faq-a-body{line-height:1.75}
 
 .faq-a-body > *:first-child{margin-top:0}
@@ -866,8 +881,8 @@ body[data-glass="heavy"] .cta-card{
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
 <!-- Data + Tweaks + App (cache-bust via ?v=N — bump on each deploy) -->
-<script src="faq-data.js?v=20260517b"></script>
-<script type="text/babel" src="tweaks-panel.jsx?v=20260517b"></script>
-<script type="text/babel" src="faq-app.jsx?v=20260517b"></script>
+<script src="faq-data.js?v=20260517c"></script>
+<script type="text/babel" src="tweaks-panel.jsx?v=20260517c"></script>
+<script type="text/babel" src="faq-app.jsx?v=20260517c"></script>
 </body>
 </html>
