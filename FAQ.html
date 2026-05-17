@@ -545,7 +545,6 @@ body[data-density="airy"] .faq-list{gap:64px}
   font-size:15px;line-height:1.6;
 }
 :lang(th) .faq-a-body{line-height:1.75}
-@media (max-width:640px){.faq-a-body{padding:0 20px 20px 20px}}
 
 .faq-a-body > *:first-child{margin-top:0}
 .faq-a-body > *:last-child{margin-bottom:0}
@@ -795,27 +794,29 @@ body[data-density="airy"] .faq-list{gap:64px}
   .cta-row > *{width:100%;justify-content:center}
   .footer{padding:24px 22px 32px}
   .footer-inner{flex-direction:column;align-items:flex-start;gap:14px}
-  .group-head h2{font-size:20px}
-  .faq-q{padding:11px 14px;gap:12px}
-  .faq-q-text{font-size:15px;font-weight:600;gap:10px;line-height:1.4;
+  .group-head h2{font-size:19px}
+  .faq-q{padding:10px 14px;gap:10px;min-height:0}
+  .faq-q-text{font-size:14px;font-weight:600;gap:9px;line-height:1.35;
               overflow-wrap:break-word;word-break:break-word}
-  :lang(th) .faq-q-text{line-height:1.55}
-  .faq-a-body{font-size:13.5px;padding:0 14px 14px 14px;line-height:1.55;
+  :lang(th) .faq-q-text{font-size:14.5px;line-height:1.45}
+  .faq-a-body{font-size:13px;padding:0 14px 14px 14px;line-height:1.55;
               overflow-wrap:break-word;word-break:break-word}
-  :lang(th) .faq-a-body{line-height:1.7;font-size:14px}
-  .faq-a-body ol,.faq-a-body ul{padding-left:1.1em}
+  :lang(th) .faq-a-body{font-size:13.5px;line-height:1.65}
+  .faq-a-body ol,.faq-a-body ul{padding-left:1.1em;margin:.4em 0}
   .faq-a-body li{margin:3px 0}
-  .faq-mark{width:22px;height:22px;font-size:14px}
-  .faq-row,.faq-row.is-open{border-radius:18px}
+  .faq-a-body p{margin:.45em 0}
+  .faq-mark{width:20px;height:20px;font-size:13px}
+  .faq-row,.faq-row.is-open{border-radius:16px}
   /* keep tables/wide content from blowing out the row width */
   .faq-a-body .dt{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;
-                  font-size:12.5px;border-radius:10px;white-space:normal}
-  .dt th,.dt td{padding:7px 9px;word-break:break-word;overflow-wrap:break-word}
-  .callout,.tip{padding:11px 13px;border-radius:10px;font-size:13.5px}
-  :lang(th) .callout,:lang(th) .tip{font-size:14px}
-  .two-col{gap:12px}
+                  font-size:12px;border-radius:10px;white-space:normal;max-width:100%}
+  .dt th,.dt td{padding:6px 9px;word-break:break-word;overflow-wrap:break-word}
+  .callout,.tip{padding:10px 12px;border-radius:10px;font-size:13px;margin:10px 0}
+  :lang(th) .callout,:lang(th) .tip{font-size:13.5px}
+  .two-col{gap:10px;margin:10px 0}
+  ul.tick li,ul.cross li{padding-left:18px}
 }
-/* Narrow phones (≤420px) — hide non-essential nav text, full-bleed CTA */
+/* Narrow phones (≤420px) — hide non-essential nav text, tighter still */
 @media (max-width:420px){
   .nav-brand span{display:none}
   .nav-cta svg{display:none}
@@ -826,10 +827,11 @@ body[data-density="airy"] .faq-list{gap:64px}
   .cat-strip{margin:0 -18px;padding:8px 18px 14px}
   .cta-section{padding:32px 18px 48px}
   .footer{padding:20px 18px 28px}
-  .faq-q{padding:10px 12px}
-  .faq-q-text{font-size:14.5px}
-  .faq-a-body{font-size:13px;padding:0 12px 12px 12px}
-  :lang(th) .faq-a-body{font-size:13.5px}
+  .faq-q{padding:9px 12px}
+  .faq-q-text{font-size:13.5px}
+  :lang(th) .faq-q-text{font-size:14px}
+  .faq-a-body{font-size:12.5px;padding:0 12px 12px 12px}
+  :lang(th) .faq-a-body{font-size:13px}
 }
 
 /* glass off => no backdrop blur, opaque fallback */
@@ -863,9 +865,9 @@ body[data-glass="heavy"] .cta-card{
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-<!-- Data + Tweaks + App -->
-<script src="faq-data.js"></script>
-<script type="text/babel" src="tweaks-panel.jsx"></script>
-<script type="text/babel" src="faq-app.jsx"></script>
+<!-- Data + Tweaks + App (cache-bust via ?v=N — bump on each deploy) -->
+<script src="faq-data.js?v=20260517a"></script>
+<script type="text/babel" src="tweaks-panel.jsx?v=20260517a"></script>
+<script type="text/babel" src="faq-app.jsx?v=20260517a"></script>
 </body>
 </html>
